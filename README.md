@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS chrono.report (
 ### The Generated Code
 
 ```java
-package com.cyngn.chrono.storage.udt;
+package com.test;
 
 import com.datastax.driver.mapping.annotations.Field;
 import com.datastax.driver.mapping.annotations.UDT;
@@ -168,7 +168,7 @@ public class UrlPackage {
     "}";
   }
 }
-package com.cyngn.chrono.storage.udt;
+package com.test;
 
 import com.datastax.driver.mapping.annotations.Field;
 import com.datastax.driver.mapping.annotations.UDT;
@@ -219,7 +219,7 @@ public class Measurement {
     "}";
   }
 }
-package com.cyngn.chrono.storage.table;
+package com.test;
 
 import com.datastax.driver.mapping.annotations.ClusteringColumn;
 import com.datastax.driver.mapping.annotations.Column;
@@ -287,9 +287,9 @@ public class Payload {
     "}";
   }
 }
-package com.cyngn.chrono.storage.table;
+package com.test;
 
-import com.cyngn.chrono.storage.udt.Measurement;
+import com.test.Measurement;
 import com.datastax.driver.mapping.annotations.ClusteringColumn;
 import com.datastax.driver.mapping.annotations.Column;
 import com.datastax.driver.mapping.annotations.FrozenValue;
@@ -503,7 +503,7 @@ public class Report {
     "}";
   }
 }
-package com.cyngn.chrono.storage.table;
+package com.test;
 
 import com.datastax.driver.mapping.annotations.ClusteringColumn;
 import com.datastax.driver.mapping.annotations.Column;
@@ -600,9 +600,9 @@ public class UploadData {
     "}";
   }
 }
-package com.cyngn.chrono.storage.table;
+package com.test;
 
-import com.cyngn.chrono.storage.udt.UrlPackage;
+import com.test.UrlPackage;
 import com.datastax.driver.mapping.annotations.Column;
 import com.datastax.driver.mapping.annotations.FrozenValue;
 import com.datastax.driver.mapping.annotations.PartitionKey;
@@ -691,9 +691,9 @@ public interface CommonDal<T> {
 
   void delete(T entity, Consumer<Boolean> onComplete);
 }
-package com.cyngn.chrono.storage.dal;
+package com.test;
 
-import com.cyngn.chrono.storage.table.Payload;
+import com.test.Payload;
 import com.englishtown.vertx.cassandra.CassandraSession;
 import com.englishtown.vertx.cassandra.mapping.VertxMapper;
 import com.englishtown.vertx.cassandra.mapping.VertxMappingManager;
@@ -807,9 +807,9 @@ public class PayloadDal implements CommonDal<Payload> {
     }, primaryKey);
   }
 }
-package com.cyngn.chrono.storage.dal;
+package com.test;
 
-import com.cyngn.chrono.storage.table.Report;
+import com.test.Report;
 import com.englishtown.vertx.cassandra.CassandraSession;
 import com.englishtown.vertx.cassandra.mapping.VertxMapper;
 import com.englishtown.vertx.cassandra.mapping.VertxMappingManager;
@@ -923,9 +923,9 @@ public class ReportDal implements CommonDal<Report> {
     }, primaryKey);
   }
 }
-package com.cyngn.chrono.storage.dal;
+package com.test;
 
-import com.cyngn.chrono.storage.table.UploadData;
+import com.test.UploadData;
 import com.englishtown.vertx.cassandra.CassandraSession;
 import com.englishtown.vertx.cassandra.mapping.VertxMapper;
 import com.englishtown.vertx.cassandra.mapping.VertxMappingManager;
@@ -1039,9 +1039,9 @@ public class UploadDataDal implements CommonDal<UploadData> {
     }, primaryKey);
   }
 }
-package com.cyngn.chrono.storage.dal;
+package com.test;
 
-import com.cyngn.chrono.storage.table.TestBatch;
+import com.test.TestBatch;
 import com.englishtown.vertx.cassandra.CassandraSession;
 import com.englishtown.vertx.cassandra.mapping.VertxMapper;
 import com.englishtown.vertx.cassandra.mapping.VertxMappingManager;
