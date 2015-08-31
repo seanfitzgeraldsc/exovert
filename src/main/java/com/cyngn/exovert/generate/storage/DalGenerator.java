@@ -52,7 +52,7 @@ public class DalGenerator {
             dalBuilder.addMethod(getDeleteByKey(entityTable));
             dalBuilder.addMethod(getEntityGet(entityTable));
 
-            dalBuilder.addJavadoc("GENERATED CODE DO NOT MODIFY, UNLESS YOU HATE YOURSELF\n"
+            dalBuilder.addJavadoc("GENERATED CODE DO NOT MODIFY, UNLESS YOU HATE YOURSELF AND OTHERS\n"
                     + "\nDAL for Cassandra entity - " + rawName + "\n");
 
             dalBuilder.addSuperinterface(ParameterizedTypeName.get(ClassName.get(namespaceToUse, "CommonDal"), entityTable));
